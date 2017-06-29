@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MRI Room vid</title>
+    <link rel="stylesheet" href="css/pannellum.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pannellum.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        #panorama {
+            width: 1024px;
+            height: 650px;
+        }
+        #mymenu a:hover {
+            color: darkblue;
+        }
+        body {
+            width: 100%;
+            height:100%;
+            /*background-image: url('images/information_background.jpg');*/
+            background-color: black;
+            margin:0px;
+            background: url("images/bg1.png");
+        }
+    </style>
+</head>
+<body>
+<svg width="1024px" height="92px" viewBox="0 0 1024 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="MRI-Room-vid" sketch:type="MSArtboardGroup">
+            <rect id="Rectangle-1" fill="#2467A3" sketch:type="MSShapeGroup" x="-1" y="0" width="1024" height="92"></rect>
+
+            <g id="rilor" sketch:type="MSLayerGroup" transform="translate(19.000000, 1.000000)">
+                <image sketch:type="MSBitmapLayer" x="0" y="0" width="43" height="89" xlink:href="images/rilor.png"></image>
+            </g>
+            <text id="I-CAN-SCAN" sketch:type="MSTextLayer" font-family="Arial" font-size="27" font-weight="normal" fill="#D8E3E3">
+                <tspan x="59" y="56">I CAN SCAN</tspan>
+            </text>
+            <rect id="Home" fill="#2467A3" sketch:type="MSShapeGroup" x="219" y="0" width="161" height="92"></rect>
+            <rect id="intro-vid" fill="#2467A3" sketch:type="MSShapeGroup" x="380" y="0" width="161" height="92"></rect>
+            <rect id="mriroom" fill="#2467A3" sketch:type="MSShapeGroup" x="541" y="0" width="161" height="92"></rect>
+            <rect id="insidemri" fill="#2467A3" sketch:type="MSShapeGroup" x="702" y="0" width="161" height="92"></rect>
+            <rect id="faqs" fill="#2467A3" sketch:type="MSShapeGroup" x="863" y="0" width="161" height="92"></rect>
+
+            <text id="home-text" sketch:type="MSTextLayer" font-family="Arial" font-size="22" font-weight="normal"
+                  fill="#E4E3E3">
+                <tspan x="267" y="52">HOME</tspan>
+            </text>
+            <text id="intro-vid-text" sketch:type="MSTextLayer" font-family="Arial" font-size="20" font-weight="normal"
+                  fill="#E3E3E3">
+                <tspan x="385" y="44">INTRODUCTION</tspan>
+                <tspan x="425" y="66.6542969">VIDEO</tspan>
+            </text>
+            <text id="indsidemri-text" sketch:type="MSTextLayer" font-family="Arial" font-size="20" font-weight="normal"
+                  fill="#E3E3E3">
+                <tspan x="726" y="44">INSIDE THE</tspan>
+                <tspan x="756" y="66.6542969">MRI</tspan>
+            </text>
+            <text id="mriroom-text" sketch:type="MSTextLayer" font-family="Arial" font-size="22" font-weight="normal"
+                  fill="#E3E3E3">
+                <tspan x="571" y="52">MRI ROOM</tspan>
+            </text>
+            <text id="faqs-text" sketch:type="MSTextLayer" font-family="Arial" font-size="22" font-weight="normal"
+                  fill="#E3E3E3">
+                <tspan x="912" y="52">FAQS</tspan>
+            </text>
+
+            <rect id="Rectangle-7" fill="#E6B159" sketch:type="MSShapeGroup" x="704" y="80" width="159" height="10"></rect>
+            <!--<rect id="Rectangle-22" stroke="#979797" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="98" width="1020" height="663"></rect>
+            <polygon id="Triangle-1" stroke="#979797" fill="#050505" sketch:type="MSShapeGroup" transform="translate(552.000000, 404.500000) rotate(-270.000000) translate(-552.000000, -404.500000) " points="552 270.5 697.5 538.5 406.5 538.5 "></polygon>-->
+
+
+        </g>
+    </g>
+</svg>
+<div id="panorama" style="margin-top: -6px;"></div>
+<audio id="mrisound" src="images/mrisound.WAV" style="display: none;" hidden loop   ></audio>
+<script>
+    pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "images/test-exp.png",
+        "title": "INSIDE THE MRI",
+        "author": "I CAN SCAN",
+        "autoLoad": true
+    });
+
+</script>
+<script>
+   
+    $("#Home, #home-text").click(function(){
+
+        window.location.href = "index.html";
+    });
+    $("#intro-vid, #intro-vid-bubble, #intro-vid-text").click(function(){
+        window.location.href = "introvid.html";
+    });
+    $("#mriroom,#mriroom-bubble, #mriroom-text").click(function(){
+        window.location.href = "mriroom.html";
+    });
+    $("#insidemri,#insidemri-bubble, #insidemri-text").click(function(){
+        window.location.href = "insidemri.html";
+    });
+    $("#faqs,#faqs-bubble,#faqs-text").click(function(){
+        window.location.href = "FAQs.html";
+    });
+    $("#panorama").click(function () {
+        setInterval(function () {
+
+            $("#mrisound").get(0).play();
+        }, 1000);
+    });
+    setInterval(function(){window.location.href = "insidemri.html";},300*1000);
+</script>
+</body>
+</html>
